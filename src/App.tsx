@@ -4,6 +4,8 @@ import GlobalStyles from './styles/global';
 import {Main, Section, Sticky } from './styles';
 import FirstAndSecond from './components/FirstAndSecond';
 import Header from './components/Header';
+import NavBar from './components/NavBar';
+import Layout from './components/Layout';
 
 function App() {
 
@@ -13,23 +15,26 @@ function App() {
 
   return (
     <>
-    <GlobalStyles />
+    <Header >
+        <Layout>
+          <NavBar />
+        </Layout>
 
-    <Header /> 
+      </Header> 
+      <Main style={{ height: '1610vh'}}>
+        <Section style={{height: '72.7%'}}>
+          <FirstAndSecond />
+        </Section>
 
-    <Main style={{ height: '1610vh'}}>
-      <Section style={{height: '72.7%'}}>
-        <FirstAndSecond />
-      </Section>
+        <Section style={{height: '9.7%'}}>
+          <Sticky className="third" />
+        </Section>
 
-      <Section style={{height: '9.7%'}}>
-        <Sticky className="third" />
-      </Section>
-
-      <Section style={{height: '10.1%'}}>
-        <Sticky className="fourth" />
-      </Section>
-    </Main>
+        <Section style={{height: '10.1%'}}>
+          <Sticky className="fourth" />
+        </Section>
+      </Main>
+      <GlobalStyles />
     </>
   );
 }

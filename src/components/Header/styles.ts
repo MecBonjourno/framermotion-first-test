@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const Container = styled(motion.header)`
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
     background: rgba(0, 0, 0, 0.1);
 
     position: fixed;
