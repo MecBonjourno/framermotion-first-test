@@ -23,7 +23,9 @@ function App() {
       </Header> 
       <Main style={{ height: '1610vh'}}>
         <Section style={{height: '72.7%'}}>
-          <FirstAndSecond />
+          <FirstAndSecond >
+            {/* <Text>Lero Lero</Text> */}
+          </FirstAndSecond>
         </Section>
 
         <Section style={{height: '9.7%'}}>

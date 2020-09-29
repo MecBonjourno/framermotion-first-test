@@ -1,7 +1,10 @@
 import React from 'react';
 import {motion, useTransform, useViewportScroll} from 'framer-motion'
+import Button from '../../components/Button'
+import john from '../../assets/johnscreenshot.png'
 
 import { Sticky } from '../../styles';
+import {Content } from './styles'
 
 const FirstAndSecond: React.FC = () => {
   const { scrollYProgress } = useViewportScroll()
@@ -50,7 +53,7 @@ const First: React.FC = () => {
       
         const offsetY = useTransform(scrollYProgress,[0.328, 0.397, 0.461, 0.53],['0%', '-100%', '-100%','-200%' ])
 
-      const rightSideY= useTransform(scrollYProgress,[0.047, 0.093],['58vh', '0vh'])
+      const rightSideY= useTransform(scrollYProgress,[0.047, 0.093],['59vh', '0vh'])
       const rightSideScale = useTransform(scrollYProgress,[0.047, 0.093],[0,0.511])
 
   return (
@@ -64,15 +67,29 @@ const First: React.FC = () => {
       <div className="a">
         <motion.div className="left-side"
         style={{ height: leftSideHeight }}
-        />
+          >
 
+            <Content>
+          <h1> QueRy </h1>
+          <p style={{color: 'white'}}>Todas as suas conexões, um toque de distância.</p>
+            <Button type='submit' style={{maxWidth: '60%'}}>App Store</Button>
+
+          </Content>
+
+        {/* <p style={{fontSize: 96}}> Test </p> */}
+
+          </motion.div>
         <div className="right-side">
           <motion.div className="right-image"
             style={{
               y: rightSideY,
               scale: rightSideScale,
             }}
-          />
+          >
+
+            <img src={john} style={{maxWidth: '100%', maxHeight: '130%', paddingLeft: 160}}/>
+
+          </motion.div>
         </div>
       </div>
 

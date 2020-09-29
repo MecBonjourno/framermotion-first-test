@@ -1,15 +1,20 @@
 import React from 'react';
+import logo from '../../assets/logoWhite.png'
+
 import { DropdownProvider, DropdownOption, DropdownRoot } from '../Dropdown';
 
 import { Products ,Developers, Company } from '../Content'
 
-import { Container, DropdownStyles } from './styles';
+import { Container, DropdownStyles, Logo } from './styles';
 
 const NavBar: React.FC = () => {
   return (
     <DropdownProvider>
      <DropdownStyles>
      <Container>
+       <Logo>
+         <img src={logo} alt="Logo" />
+       </Logo>
           <ul>
             <li>
               <DropdownOption
@@ -33,6 +38,7 @@ const NavBar: React.FC = () => {
               />
             </li>
           </ul>
+
         </Container>
        <DropdownRoot />
       </DropdownStyles>
